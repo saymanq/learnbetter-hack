@@ -27,7 +27,7 @@ export default function Content() {
         // Optional: Clear the data from storage
         // sessionStorage.removeItem('uploadedFileData');
         if (activeTab === 'flashcard') {
-          axios.post('http://127.0.0.1:7000/api/generate', {
+          axios.post('https://learnbetter-hack.onrender.com/api/generate', {
             text: JSON.parse(storedData).fullText
           })
           .then(response => {
@@ -55,7 +55,7 @@ export default function Content() {
     const currentQuestion = flashcards[currentCardIndex].front;
 
     try {
-      const response = await fetch('http://127.0.0.1:7000/api/feedback', {
+      const response = await fetch('https://learnbetter-hack.onrender.com/api/feedback', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -12,7 +12,7 @@ const FileUpload = () => {
         formData.append('file', file);
         console.log(formData);
     
-        axios.post('http://127.0.0.1:7000/api/upload-pdf', formData, {
+        axios.post('https://learnbetter-hack.onrender.com/api/upload-pdf', formData, {
             headers: {
               'Content-Type': 'multipart/form-data'
             }})
