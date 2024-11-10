@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react'
 import { NavBar, FileUpload } from '../components';
 import { UserAuth } from '../context/AuthContext';
+import Spline from '@splinetool/react-spline';
 
 export default function Home() {
   const { user } = UserAuth()
@@ -24,18 +25,21 @@ export default function Home() {
       bottom: 0,
       backgroundColor: 'rgba(0, 0, 0, 0.5)',
       zIndex: 0,}}>
+        <Spline
+        scene="https://prod.spline.design/xqpS58I5HcBn3sqY/scene.splinecode"
+        className="absolute w-full h-full -z-10"
+      />
       <NavBar />
+      
       {loading ? null : !user ? (
-        <div className='flex justify-center flex-col items-center'>
-          <div className="bg-emerald-500 text-white sm:w-[500px] w-[330px] h-[300px] flex justify-center items-center mt-[150px] flex-col rounded-2xl sm:text-[20px] text-[15px]">
-            Please login to access resources
+        <div className="absolute bottom-[30px] left-[30px] text-white text-4xl animate-slideUp animate-fadeIn">
+          <h1>Welcome to QuickAce.<br />Clutch your exams at the last minute.</h1>
+          <div className="flex gap-2.5 mt-4">
+            <button className="px-5 py-2.5 rounded-full text-base border-2 border-white text-white bg-transparent hover:bg-white/10 transition-colors duration-300 cursor-pointer">
+              Sign up for free
+            </button>
           </div>
-          <div className='bg-emerald-500 sm:w-[500px] w-[400px] flex items-center flex-col justify-center p-3 mt-3 text-xs text-center sm:gap-1 gap-2'>
-            <div>Checkout my personal website <a href="https://sayman.me" target="_blank" className='text-blue-700 hover:underline'>here</a></div>
-            <div>Code for this website can be found at <a href="https://github.com/saymanq/UofA_Resources" target="_blank" className='text-blue-700 hover:underline'>https://github.com/saymanq/UofA_Resources</a></div>
-            <div>If you have feedback or suggestions please email me at <a href="mailto:syedaym1@ualberta.ca" target="_blank" className='text-blue-700 hover:underline'>syedaym1@ualberta.ca</a></div>
-          </div>
-        </div>
+       </div>
         ) : (
         <div>
           <FileUpload />
