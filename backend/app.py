@@ -104,4 +104,4 @@ def test():
     #return llm_output('{"response_format": "Structure the summary with clear sections and bullet points where appropriate and topics and subtopics. Return the response only in JSON format.", "input": "Explain how the internet works."}')        
 
 if __name__ == '__main__':
-    app.run(debug=os.getenv('DEBUG'), port=7000)
+    app.run(host='0.0.0.0', port=5000)
