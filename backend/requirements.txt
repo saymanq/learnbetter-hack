@@ -1,0 +1,11 @@
+flask
+flask-cors
+pinecone-client
+sentence-transformers
+torch
+pdfplumber
+python-dotenv
+langchain-groq
+langgraph
+typing-extensions
+uuid
